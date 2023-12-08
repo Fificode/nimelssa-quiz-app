@@ -26,6 +26,7 @@ export default {
       'light-grey': '#717171',
       'light-purple-bg': '#cd9cf2',
       'white-bg' : '#f6f3ff ',
+      'carousel-bg': '#bbbbbb'
      
     },
     extend: {
