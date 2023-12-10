@@ -3,7 +3,7 @@ import React from 'react'
 const Signup = () => {
   return (
     <>
-<div className='flex flex-col items-start mx-[30px] mb-[20px] mt-[40px]'>
+<div className='flex flex-col items-start mx-[30px] mb-[20px] mt-[100px] md:mt-[40px]'>
 
 <h2 className='font-roboto text-[17px] font-[700] my-[5px] text-left space-[3px]'>Welcome to NIMELSSA Quiz</h2> 
 <p className='font-roboto text-[14px] text-[#bbbbbb] space-[5px] font-[400]'>Register your account</p>
