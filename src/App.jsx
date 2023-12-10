@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Home from './pages/Homepage';
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Signup from './pages/Signup';
 
 
 function App() {
@@ -22,11 +23,16 @@ return () => clearTimeout(timeout);
        <img src='./assets/nimelssaQuizTime.png' alt='Illustration of Quiz Time on Screen' className='w-[250px] h-[350px] md:w-[300px] md:h-[400px]' />
        </div>
       ) : (
-       
+       <Router>
         <div className='box-border'>
         {/* Main content of the website */}
           <Home/>
            </div>
+           <Routes>
+           <Route path="/" exact element={<Home />} />
+           <Route path="/signup" element={<Signup/>} />
+           </Routes>
+           </Router>
       )}
     </div>
   );
