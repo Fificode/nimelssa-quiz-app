@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Home from './pages/Homepage';
 import { BrowserRouter as Router, Routes, Route,Link } from "react-router-dom";
 import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 
 function App() {
@@ -37,6 +38,7 @@ return () => clearTimeout(timeout);
            <Routes>
            <Route path="/" exact element={<Home />} />
            <Route path="/signup" element={<Signup/>} />
+           <Route path="/login" element={<Login/>} />
            </Routes>
            </Router>
       )}
