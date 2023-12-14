@@ -29,7 +29,7 @@ const Signup = () => {
   </div>
   {/* Sign up button */}
   <div className='mb-[5px] mt-[15px]'>
-  <button className='p-[5px] bg-purple text-[#ffffff] rounded-[20px] w-[120px] text-[13px] text-center cursor-pointer hover:bg-[#ffffff] hover:text-[#303030] hover:border-light-purple-bg hover:border-[1px]'>Sign Up</button>
+  <button className='p-[5px] bg-purple text-[#ffffff] rounded-[20px] w-[120px] text-[13px] text-center cursor-pointer hover:bg-[#ffffff] hover:text-purple hover:border-light-purple-bg hover:border-[1px]'>Sign Up</button>
   </div>
 </form>
 </div>
