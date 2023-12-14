@@ -3,6 +3,7 @@ import Home from './pages/Homepage';
 import { BrowserRouter as Router, Routes, Route,Link } from "react-router-dom";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Dashboard from './pages/dashboard/Dashboard';
 
 
 function App() {
@@ -39,6 +40,7 @@ return () => clearTimeout(timeout);
            <Route path="/" exact element={<Home />} />
            <Route path="/signup" element={<Signup/>} />
            <Route path="/login" element={<Login/>} />
+           <Route path='/dashboard' element={<Dashboard />}/>
            </Routes>
            </Router>
       )}
