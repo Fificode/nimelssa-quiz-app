@@ -55,7 +55,7 @@ return (
 <div className='flex flex-col items-center my-[10px]'>
 <h2 className='font-[700] text-[23px] md:text-[27px] text-center space-[3px] font-roboto mt-[5px]'>Welcome to NIMELSSA Quiz</h2>
   <Link to='/signup' className='p-[10px] mt-[30px] mb-[10px] bg-purple text-[#ffffff] rounded-[20px] w-[250px] text-[13px] text-center  hover:bg-[#ffffff] hover:text-purple hover:border-light-purple-bg hover:border-[1px]'>GET STARTED </Link>
-  <Link to='/login' className='p-[10px] mt-[10px] mb-[5px] bg-[#bbbbbb] text-[#303030] rounded-[20px] w-[250px] text-[13px] text-center  hover:text-purple hover:border-purple hover:border-[1px] hover:bg-white-bg'>I ALREADY HAVE AN ACCOUNT</Link>
+  <Link to='/login' className='p-[10px] mt-[10px] mb-[5px] bg-[#bbbbbb] text-[#303030] rounded-[20px] w-[250px] text-[13px] text-center shadow  hover:text-purple hover:border-purple hover:border-[1px] hover:bg-white-bg'>I ALREADY HAVE AN ACCOUNT</Link>
 </div>
 </div>
     </div>

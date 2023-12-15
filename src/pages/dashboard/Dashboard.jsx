@@ -13,7 +13,6 @@ import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -21,19 +20,8 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
+// import Avatar from '@mui/material/Avatar';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const drawerWidth = 240;
 
@@ -95,11 +83,14 @@ export default function Dashboard() {
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
+        
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
             }}
           >
+          
+          
             <IconButton
               edge="start"
               color="inherit"
@@ -110,6 +101,7 @@ export default function Dashboard() {
                 ...(open && { display: 'none' }),
               }}
             >
+             
               <MenuIcon />
             </IconButton>
             <Typography
@@ -137,6 +129,14 @@ export default function Dashboard() {
               px: [1],
             }}
           >
+          <div>
+      <img src="/assets/nimelssaLogo.png" alt="NIMELSSA Logo" style={{width: '50px', height: '50px'}} />
+    </div>
+          <Typography
+              color="inherit"
+              noWrap
+              sx={{ flexGrow: 1 }}
+            >NIMELSSA Quiz</Typography>
             <IconButton onClick={toggleDrawer}>
               <ChevronLeftIcon />
             </IconButton>
@@ -196,7 +196,7 @@ export default function Dashboard() {
                 </Paper>
               </Grid>
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
+            {/* <Copyright sx={{ pt: 4 }} /> */}
           </Container>
         </Box>
       </Box>
