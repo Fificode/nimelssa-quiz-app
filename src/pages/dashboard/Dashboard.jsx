@@ -19,7 +19,11 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
-import Orders from './Orders';
+import QuizList from './QuizList';
+import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
+
+
 // import Avatar from '@mui/material/Avatar';
 
 
@@ -68,9 +72,38 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     },
   }),
 );
+const CustomTypography = styled(Typography)({
+  color: '#303030', // Change text color
+  fontSize: '30px', // Change font size
+
+ 
+  // Add any other custom styles
+});
+// const useStyles = makeStyles((theme) => ({
+//   searchInput: {
+//     '& .MuiOutlinedInput-root': {
+//       borderRadius: theme.shape.borderRadius,
+//       backgroundColor: '#f5f5f5', // Change the background color
+//       '& fieldset': {
+//         borderColor: 'transparent', // Hide the border
+//       },
+//       '&:hover fieldset': {
+//         borderColor: 'transparent', // Hide the border on hover
+//       },
+//       '&.Mui-focused fieldset': {
+//         borderColor: 'transparent', // Hide the border when focused
+//       },
+//     },
+//     '& .MuiInputBase-input': {
+//       paddingLeft: theme.spacing(2), // Add padding for the input text
+//     },
+//   },
+// }));
+
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
+// const classes = useStyles();
 
 export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
@@ -82,7 +115,7 @@ export default function Dashboard() {
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
+        <AppBar position="absolute" open={open} sx={{backgroundColor: '#ffffff', boxShadow: 0,}}>
         
           <Toolbar
             sx={{
@@ -90,7 +123,7 @@ export default function Dashboard() {
             }}
           >
           
-          
+         
             <IconButton
               edge="start"
               color="inherit"
@@ -104,20 +137,24 @@ export default function Dashboard() {
              
               <MenuIcon />
             </IconButton>
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
-              Dashboard
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+
+            <TextField
+            //  className={classes.searchInput}
+      variant="outlined"
+      placeholder="Search..."
+      InputProps={{
+        startAdornment: (
+          <SearchIcon color="disabled" />
+        ),
+      }}
+     
+    />
+            <IconButton color="secondary" sx={{flexGrow: 3}}>
+              <Badge badgeContent={4} color="primary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -129,9 +166,9 @@ export default function Dashboard() {
               px: [1],
             }}
           >
-          <div>
+          <Box>
       <img src="/assets/nimelssaLogo.png" alt="NIMELSSA Logo" style={{width: '50px', height: '50px'}} />
-    </div>
+    </Box>
           <Typography
               color="inherit"
               noWrap
@@ -162,7 +199,21 @@ export default function Dashboard() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        
+
             <Grid container spacing={3}>
+            <Grid item xs={12}>
+  <Box sx={{width: '100%', height: '150px', backgroundColor: '#cd9cf2', borderRadius: '10px', display: 'flex', flexDirection:'row', justifyContent: 'space-between'}}>
+  <Box sx={{flexGrow: 1,  padding: '30px', display: 'flex', flexDirection: 'column'}}>
+  <CustomTypography>Hi, User</CustomTypography>
+  <Typography>Ready to start your day with some quiz?</Typography>
+  </Box>
+  
+           
+  <img src="/assets/isometric.png" alt="NIMELSSA Logo" style={{width: '400px', height: '180px'}} />
+  </Box>
+
+          </Grid>
               {/* Chart */}
               <Grid item xs={12} md={8} lg={9}>
                 <Paper
@@ -189,10 +240,10 @@ export default function Dashboard() {
                   <Deposits />
                 </Paper>
               </Grid>
-              {/* Recent Orders */}
+              {/* Recent Quiz Participant */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
+                  <QuizList />
                 </Paper>
               </Grid>
             </Grid>
