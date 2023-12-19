@@ -39,11 +39,13 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <React.Fragment>
+  
     <ListItemButton>
       <ListItemIcon>
       <LogoutIcon />
       </ListItemIcon>
       <ListItemText primary="Log out" />
     </ListItemButton>
+ 
   </React.Fragment>
 );

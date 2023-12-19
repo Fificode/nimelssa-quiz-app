@@ -72,7 +72,7 @@ export default function QuizList() {
           ))}
         </TableBody>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
+      <Link href="#" onClick={preventDefault} sx={{ mt: 3, color: 'purple', textDecoration: 'none' }}>
         See more participants
       </Link>
     </React.Fragment>

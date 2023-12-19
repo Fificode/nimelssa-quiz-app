@@ -22,9 +22,7 @@ import Deposits from './Deposits';
 import QuizList from './QuizList';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
-
-
-// import Avatar from '@mui/material/Avatar';
+import Avatar from '@mui/material/Avatar';
 
 
 const drawerWidth = 240;
@@ -72,13 +70,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     },
   }),
 );
-const CustomTypography = styled(Typography)({
-  color: '#303030', // Change text color
-  fontSize: '30px', // Change font size
 
- 
-  // Add any other custom styles
-});
 // const useStyles = makeStyles((theme) => ({
 //   searchInput: {
 //     '& .MuiOutlinedInput-root': {
@@ -126,7 +118,7 @@ export default function Dashboard() {
          
             <IconButton
               edge="start"
-              color="inherit"
+              color="#303030"
               aria-label="open drawer"
               onClick={toggleDrawer}
               sx={{
@@ -149,12 +141,19 @@ export default function Dashboard() {
       }}
      
     />
-            <IconButton color="secondary" sx={{flexGrow: 3}}>
+    <Box sx={{display:'flex', justifyContent:'flex-end', flexGrow: 3}}>
+            <IconButton color="secondary" sx={{marginRight: '10px'}} >
               <Badge badgeContent={4} color="primary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
 
+  <Avatar sx={{marginRight: '5px'}}/>
+<Typography sx={{color:'#303030', marginTop:'8px'}}>Layla Towers</Typography>
+<IconButton>
+              <ChevronLeftIcon />
+            </IconButton>
+</Box>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -181,8 +180,7 @@ export default function Dashboard() {
           <Divider />
           <List component="nav">
             {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+           <Box sx={{paddingTop: '220px'}}>{secondaryListItems}</Box> 
           </List>
         </Drawer>
         <Box
@@ -205,13 +203,60 @@ export default function Dashboard() {
             <Grid item xs={12}>
   <Box sx={{width: '100%', height: '150px', backgroundColor: '#cd9cf2', borderRadius: '10px', display: 'flex', flexDirection:'row', justifyContent: 'space-between'}}>
   <Box sx={{flexGrow: 1,  padding: '30px', display: 'flex', flexDirection: 'column'}}>
-  <CustomTypography>Hi, User</CustomTypography>
-  <Typography>Ready to start your day with some quiz?</Typography>
+  <Typography sx={{color: '#303030', fontSize: '30px'}}>Hi, Layla</Typography>
+  <Typography sx={{color: '#303030'}}>Ready to start your day with some quiz?</Typography>
   </Box>
   
            
   <img src="/assets/isometric.png" alt="NIMELSSA Logo" style={{width: '400px', height: '180px'}} />
   </Box>
+
+          </Grid>
+          {/* Overview */}
+          <Grid item xs={12}>
+<Typography sx={{color:"#303030", fontSize:'20px', marginLeft: '15px'}}>Overview</Typography>
+<Box sx={{display: 'flex', flexDirection: 'row', justifyContent:'space-around', marginTop:'40px'}}>
+<Box sx={{}}>
+<Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 100,
+                    width: 250,
+                 backgroundColor: '#ffc82c',
+                  }}
+                >
+  <Typography>No of Quiz Taken</Typography>
+  </Paper>
+</Box>
+<Box>
+<Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 100,
+                    width: 250,
+                    backgroundColor: '#7e5bef ',
+                  }}
+                >
+  <Typography>Scholar of the month</Typography></Paper>
+</Box>
+<Box>
+<Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 100,
+                    width: 250,
+                    backgroundColor: '#1fb6ff',
+                  }}
+                >
+  <Typography>Scholar of the semester</Typography></Paper>
+</Box>
+</Box>
 
           </Grid>
               {/* Chart */}

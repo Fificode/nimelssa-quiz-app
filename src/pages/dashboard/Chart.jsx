@@ -4,20 +4,22 @@ import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recha
 import Title from './Title';
 
 // Generate Sales Data
-function createData(time, amount) {
-  return { time, amount };
+function createData(date, score) {
+  return { date, score };
 }
 
 const data = [
-  createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', undefined),
+  createData('07/10,2024', 0),
+  createData('09/05/2024', 10),
+  createData('07/05/2024', 20),
+  createData('08/04/2024', 30),
+  createData('09/04/2024', 40),
+  createData('04/03/2024', 50),
+  createData('21/03/2024', 60),
+  createData('06/09/2024', 70),
+  createData('26/09/2024', 80),
+  createData('01/04/2024', 90),
+  createData('03/04/2024', 100),
 ];
 
 export default function Chart() {
@@ -25,7 +27,7 @@ export default function Chart() {
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Performance</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -37,7 +39,7 @@ export default function Chart() {
           }}
         >
           <XAxis
-            dataKey="time"
+            dataKey="date"
             stroke={theme.palette.text.secondary}
             style={theme.typography.body2}
           />
@@ -54,14 +56,14 @@ export default function Chart() {
                 ...theme.typography.body1,
               }}
             >
-              Sales ($)
+              Quiz(%)
             </Label>
           </YAxis>
           <Line
             isAnimationActive={false}
             type="monotone"
-            dataKey="amount"
-            stroke={theme.palette.primary.main}
+            dataKey="score"
+            stroke={'#cd9cf2'}
             dot={false}
           />
         </LineChart>
