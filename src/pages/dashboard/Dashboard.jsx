@@ -23,6 +23,9 @@ import QuizList from './QuizList';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import Avatar from '@mui/material/Avatar';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import StarIcon from '@mui/icons-material/Star';
 
 
 const drawerWidth = 240;
@@ -151,7 +154,7 @@ export default function Dashboard() {
   <Avatar sx={{marginRight: '5px'}}/>
 <Typography sx={{color:'#303030', marginTop:'8px'}}>Layla Towers</Typography>
 <IconButton>
-              <ChevronLeftIcon />
+              <ArrowDropDownIcon />
             </IconButton>
 </Box>
           </Toolbar>
@@ -216,45 +219,72 @@ export default function Dashboard() {
           <Grid item xs={12}>
 <Typography sx={{color:"#303030", fontSize:'20px', marginLeft: '15px'}}>Overview</Typography>
 <Box sx={{display: 'flex', flexDirection: 'row', justifyContent:'space-around', marginTop:'40px'}}>
-<Box sx={{}}>
+<Box>
 <Paper
                   sx={{
                     p: 2,
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
                     height: 100,
                     width: 250,
                  backgroundColor: '#ffc82c',
                   }}
                 >
-  <Typography>No of Quiz Taken</Typography>
+                <Box sx={{height: '60px', width: '60px', backgroundColor: '', dsiplay: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <EmojiEventsIcon sx={{color:'#fff', height: '50px', width: '50px'}}/>
+                </Box>
+                <Box sx={{width:'150px'}}>
+                <Typography sx={{fontSize:'18px', color: '#fff', fontWeight: 600}}>0</Typography>
+  <Typography sx={{fontSize:'14px', color: '#fff', fontWeight: 500}}>Scholar of the week</Typography>
+  </Box>
   </Paper>
 </Box>
 <Box>
-<Paper
+  <Paper
                   sx={{
                     p: 2,
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
                     height: 100,
                     width: 250,
-                    backgroundColor: '#7e5bef ',
+                 backgroundColor: '#7e5bef',
                   }}
                 >
-  <Typography>Scholar of the month</Typography></Paper>
+                <Box sx={{height: '60px', width: '60px', backgroundColor: '', dsiplay: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <EmojiEventsIcon sx={{color:'#fff', height: '50px', width: '50px'}}/>
+                </Box>
+                <Box sx={{width:'150px'}}>
+                <Typography sx={{fontSize:'18px', color: '#fff', fontWeight: 600}}>0</Typography>
+  <Typography sx={{fontSize:'14px', color: '#fff', fontWeight: 500}}>Scholar of the month</Typography>
+  </Box>
+  </Paper>
 </Box>
 <Box>
-<Paper
+  <Paper
                   sx={{
                     p: 2,
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
                     height: 100,
                     width: 250,
-                    backgroundColor: '#1fb6ff',
+                 backgroundColor: 'orange',
                   }}
                 >
-  <Typography>Scholar of the semester</Typography></Paper>
+                <Box sx={{height: '60px', width: '60px', backgroundColor: '', dsiplay: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <EmojiEventsIcon sx={{color:'#fff', height: '50px', width: '50px'}}/>
+                </Box>
+                <Box sx={{width:'160px'}}>
+                <Typography sx={{fontSize:'18px', color: '#fff', fontWeight: 600}}>0</Typography>
+  <Typography sx={{fontSize:'14px', color: '#fff', fontWeight: 500}}>Scholar of the semester</Typography>
+  </Box>
+  </Paper>
+  
 </Box>
 </Box>
 
