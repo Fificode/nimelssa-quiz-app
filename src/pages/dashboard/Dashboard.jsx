@@ -25,7 +25,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Avatar from '@mui/material/Avatar';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import StarIcon from '@mui/icons-material/Star';
+
 
 
 const drawerWidth = 240;
@@ -74,27 +74,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// const useStyles = makeStyles((theme) => ({
-//   searchInput: {
-//     '& .MuiOutlinedInput-root': {
-//       borderRadius: theme.shape.borderRadius,
-//       backgroundColor: '#f5f5f5', // Change the background color
-//       '& fieldset': {
-//         borderColor: 'transparent', // Hide the border
-//       },
-//       '&:hover fieldset': {
-//         borderColor: 'transparent', // Hide the border on hover
-//       },
-//       '&.Mui-focused fieldset': {
-//         borderColor: 'transparent', // Hide the border when focused
-//       },
-//     },
-//     '& .MuiInputBase-input': {
-//       paddingLeft: theme.spacing(2), // Add padding for the input text
-//     },
-//   },
-// }));
-
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -114,7 +93,7 @@ export default function Dashboard() {
         
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px', 
             }}
           >
           
@@ -134,12 +113,14 @@ export default function Dashboard() {
             </IconButton>
 
             <TextField
-            //  className={classes.searchInput}
+            sx={{marginRight:'30px'}}
+            color='secondary'
+            size='small'
       variant="outlined"
       placeholder="Search..."
       InputProps={{
         startAdornment: (
-          <SearchIcon color="disabled" />
+          <SearchIcon color="disabled" aria-label='search icon'/>
         ),
       }}
      
@@ -151,8 +132,10 @@ export default function Dashboard() {
               </Badge>
             </IconButton>
 
-  <Avatar sx={{marginRight: '5px'}}/>
-<Typography sx={{color:'#303030', marginTop:'8px'}}>Layla Towers</Typography>
+  <Avatar sx={{marginRight: '5px',}}/>
+<Typography sx={{display:'none','@media (min-width:600px)': {
+          display: 'block', color:'#303030', marginTop:'8px', 
+        },}}>Layla Towers</Typography>
 <IconButton>
               <ArrowDropDownIcon />
             </IconButton>
@@ -183,7 +166,7 @@ export default function Dashboard() {
           <Divider />
           <List component="nav">
             {mainListItems}
-           <Box sx={{paddingTop: '220px'}}>{secondaryListItems}</Box> 
+           <Box>{secondaryListItems}</Box> 
           </List>
         </Drawer>
         <Box
@@ -200,10 +183,8 @@ export default function Dashboard() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-        
-
-            <Grid container spacing={3}>
-            <Grid item xs={12}>
+        <Grid container spacing={3}>
+            <Grid item xs='auto' md={12}>
   <Box sx={{width: '100%', height: '150px', backgroundColor: '#cd9cf2', borderRadius: '10px', display: 'flex', flexDirection:'row', justifyContent: 'space-between'}}>
   <Box sx={{flexGrow: 1,  padding: '30px', display: 'flex', flexDirection: 'column'}}>
   <Typography sx={{color: '#303030', fontSize: '30px'}}>Hi, Layla</Typography>
@@ -213,15 +194,17 @@ export default function Dashboard() {
            
   <img src="/assets/isometric.png" alt="NIMELSSA Logo" style={{width: '400px', height: '180px'}} />
   </Box>
-
-          </Grid>
+ </Grid>
           {/* Overview */}
           <Grid item xs={12}>
 <Typography sx={{color:"#303030", fontSize:'20px', marginLeft: '15px'}}>Overview</Typography>
-<Box sx={{display: 'flex', flexDirection: 'row', justifyContent:'space-around', marginTop:'40px'}}>
+<Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center',flexWrap: 'wrap', '@media (min-width:600px)': {
+          flexDirection: 'row', justifyContent:'space-around',
+        },}}>
 <Box>
 <Paper
                   sx={{
+                    my: 2,
                     p: 2,
                     display: 'flex',
                     flexDirection: 'row',
@@ -229,11 +212,12 @@ export default function Dashboard() {
                     alignItems: 'center',
                     height: 100,
                     width: 250,
-                 backgroundColor: '#ffc82c',
+                 backgroundColor: '#dc5353',
+               
                   }}
                 >
-                <Box sx={{height: '60px', width: '60px', backgroundColor: '', dsiplay: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                  <EmojiEventsIcon sx={{color:'#fff', height: '50px', width: '50px'}}/>
+                <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <EmojiEventsIcon sx={{color:'#fff', height: '50px', width: '50px',}}/>
                 </Box>
                 <Box sx={{width:'150px'}}>
                 <Typography sx={{fontSize:'18px', color: '#fff', fontWeight: 600}}>0</Typography>
@@ -244,6 +228,7 @@ export default function Dashboard() {
 <Box>
   <Paper
                   sx={{
+                    my: 2,
                     p: 2,
                     display: 'flex',
                     flexDirection: 'row',
@@ -252,9 +237,10 @@ export default function Dashboard() {
                     height: 100,
                     width: 250,
                  backgroundColor: '#7e5bef',
+               
                   }}
                 >
-                <Box sx={{height: '60px', width: '60px', backgroundColor: '', dsiplay: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <EmojiEventsIcon sx={{color:'#fff', height: '50px', width: '50px'}}/>
                 </Box>
                 <Box sx={{width:'150px'}}>
@@ -266,6 +252,7 @@ export default function Dashboard() {
 <Box>
   <Paper
                   sx={{
+                    my: 2,
                     p: 2,
                     display: 'flex',
                     flexDirection: 'row',
@@ -274,9 +261,10 @@ export default function Dashboard() {
                     height: 100,
                     width: 250,
                  backgroundColor: 'orange',
+                 
                   }}
                 >
-                <Box sx={{height: '60px', width: '60px', backgroundColor: '', dsiplay: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <EmojiEventsIcon sx={{color:'#fff', height: '50px', width: '50px'}}/>
                 </Box>
                 <Box sx={{width:'160px'}}>
@@ -316,13 +304,12 @@ export default function Dashboard() {
                 </Paper>
               </Grid>
               {/* Recent Quiz Participant */}
-              <Grid item xs={12}>
+              <Grid item xs='auto' md={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <QuizList />
                 </Paper>
               </Grid>
             </Grid>
-            {/* <Copyright sx={{ pt: 4 }} /> */}
           </Container>
         </Box>
       </Box>

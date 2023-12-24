@@ -7,10 +7,29 @@ import QuizIcon from '@mui/icons-material/Quiz';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SettingsIcon from '@mui/icons-material/Settings';
+// import { NavLink } from 'react-router-dom';
+// import { makeStyles } from '@material-ui/core/styles';
 
+// const useStyles = makeStyles((theme) => ({
+//   drawer: {
+//     width: drawerWidth,
+//     flexShrink: 0,
+//   },
+//   drawerPaper: {
+//     width: drawerWidth,
+//   },
+//   activeLink: {
+//     backgroundColor: theme.palette.primary.main,
+//     color: '#fff',
+//   },
+// }));
+// const classes = useStyles();
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
+    <ListItemButton 
+    // component={NavLink}
+          // to="/dashboard"
+          >
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>

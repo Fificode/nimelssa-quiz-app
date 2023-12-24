@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Home from './pages/Homepage';
-import { BrowserRouter as Router, Routes, Route,Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,Link} from "react-router-dom";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/dashboard/Dashboard';
@@ -41,6 +41,15 @@ return () => clearTimeout(timeout);
            <Route path="/signup" element={<Signup/>} />
            <Route path="/login" element={<Login/>} />
            <Route path='/dashboard' element={<Dashboard />}/>
+           {/* <Switch>
+          <Route path="/dashboard" exact>
+            <Dashboard title="Dashboard" />
+          </Route>
+          <Route path="/settings" exact>
+            <DashboardContent title="Settings" />
+          </Route>
+       
+        </Switch> */}
            </Routes>
            </Router>
       )}
