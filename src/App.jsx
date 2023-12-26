@@ -7,6 +7,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/dashboard/Dashboard';
 import Quiz from './pages/dashboard/Quiz';
 import DashboardContent from './pages/dashboard/DashboardContent';
+import Result from './pages/dashboard/Result';
+import Settings from './pages/dashboard/Settings';
 
 
 
@@ -40,6 +42,8 @@ return () => clearTimeout(timeout);
           <Route path='/dashboard' element={<LayoutsWithDashboard/>} >
           <Route path="/dashboard" exact element={<DashboardContent />}/>
           <Route path="/dashboard/quiz" element={<Quiz />}/>
+          <Route path="/dashboard/result" element={<Result />}/>
+          <Route path="/dashboard/settings" element={<Settings/>}/>
      </Route>
       
            </Routes>

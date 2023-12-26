@@ -5,7 +5,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 
-const Quiz = () => {
+
+const Settings = () => {
   return (
     <>
    <Box  component="main"
@@ -27,7 +28,7 @@ const Quiz = () => {
                        <Grid container spacing={3}>
 
  <Grid item xs={12}>
-<Typography sx={{color:"#303030", fontSize:'20px', marginLeft: '15px'}}>Quiz</Typography>
+<Typography sx={{color:"#303030", fontSize:'20px', marginLeft: '15px'}}>Settings</Typography>
 </Grid>
     </Grid>
     </Container>
@@ -36,4 +37,4 @@ const Quiz = () => {
   )
 }
 
-export default Quiz
+export default Settings
