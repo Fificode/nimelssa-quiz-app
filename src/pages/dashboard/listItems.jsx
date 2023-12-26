@@ -7,7 +7,7 @@ import QuizIcon from '@mui/icons-material/Quiz';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SettingsIcon from '@mui/icons-material/Settings';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import { makeStyles } from '@material-ui/core/styles';
 
 // const useStyles = makeStyles((theme) => ({
@@ -24,47 +24,53 @@ import SettingsIcon from '@mui/icons-material/Settings';
 //   },
 // }));
 // const classes = useStyles();
+
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton 
-    // component={NavLink}
-          // to="/dashboard"
-          >
+<NavLink to='/dashboard'>
+    <ListItemButton>
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Overview" />
     </ListItemButton>
+</NavLink>
+<NavLink to='/dashboard/quiz'>
     <ListItemButton>
       <ListItemIcon>
       <QuizIcon />
       </ListItemIcon>
       <ListItemText primary="Quiz" />
     </ListItemButton>
+</NavLink>
+<NavLink to='/dashboard/result'>
     <ListItemButton>
       <ListItemIcon>
       <AssignmentIcon />
       </ListItemIcon>
       <ListItemText primary="Result" />
     </ListItemButton>
+</NavLink>
+<NavLink to='/dashboard/settings'>
     <ListItemButton>
       <ListItemIcon>
         <SettingsIcon />
       </ListItemIcon>
       <ListItemText primary="Settings" />
     </ListItemButton>
+    </NavLink>
   </React.Fragment>
 );
 
 export const secondaryListItems = (
   <React.Fragment>
-  
+  <NavLink to='/logout'>
     <ListItemButton>
       <ListItemIcon>
       <LogoutIcon />
       </ListItemIcon>
       <ListItemText primary="Log out" />
     </ListItemButton>
- 
+    </NavLink>
   </React.Fragment>
 );

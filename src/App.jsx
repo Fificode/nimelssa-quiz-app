@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Home from './pages/Homepage';
-import { BrowserRouter as Router, Routes, Route,Link} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
 import Signup from './pages/Signup';
+import Logo from './pages/Logo';
 import Login from './pages/Login';
 import Dashboard from './pages/dashboard/Dashboard';
+import Quiz from './pages/dashboard/Quiz';
+import DashboardContent from './pages/dashboard/DashboardContent';
+
 
 
 function App() {
@@ -26,35 +30,40 @@ return () => clearTimeout(timeout);
        </div>
       ) : (
        <Router>
-        <div className='box-border'>
-        {/* Main content of the website */}
-           </div>
-           {/* Logo */}
-           <div className='mt-[5px] mb-[10px] fixed top-0 left-0'>
-<div className='flex'>
-<img src='/assets/nimelssaLogo.png' alt='Logo of Nimelssa' className='ml-[5px] w-[50px] h-[50px]'/>
-<h1 className='font-[600] text-[18px] font-roboto space-[2px] mt-[10px]'><Link to='/'>NIMELSSA Quiz</Link></h1>
-</div>
-</div>
-           <Routes>
+        
+         <Routes>
+         <Route path='/' element={<LayoutsWithLogo/>}>
            <Route path="/" exact element={<Home />} />
-           <Route path="/signup" element={<Signup/>} />
-           <Route path="/login" element={<Login/>} />
-           <Route path='/dashboard' element={<Dashboard />}/>
-           {/* <Switch>
-          <Route path="/dashboard" exact>
-            <Dashboard title="Dashboard" />
-          </Route>
-          <Route path="/settings" exact>
-            <DashboardContent title="Settings" />
-          </Route>
-       
-        </Switch> */}
+           <Route path="/signup" exact element={<Signup/>} />
+           <Route path="/login" exact element={<Login/>} />
+           </Route>
+          <Route path='/dashboard' element={<LayoutsWithDashboard/>} >
+          <Route path="/dashboard" exact element={<DashboardContent />}/>
+          <Route path="/dashboard/quiz" element={<Quiz />}/>
+     </Route>
+      
            </Routes>
            </Router>
       )}
     </div>
   );
 }
+function LayoutsWithLogo(){
+  return(
+    <>
+    <Logo />
+    <Outlet />
+          </>
+  )
+}
 
+function LayoutsWithDashboard(){
+  return (
+    <>
+<Dashboard />
+<Outlet />
+
+    </>
+  )
+}
 export default App;
