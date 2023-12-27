@@ -15,8 +15,6 @@ const Quiz = ({open}) => {
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
             flexGrow: 1,
-            height: '100vh',
-            width: open ? '82%': '92%',
             overflow: 'auto',
             position: 'absolute',
             left: open ? '230px' : '70px',
@@ -27,7 +25,7 @@ const Quiz = ({open}) => {
                        <Grid container spacing={3}>
 
  <Grid item xs={12}>
-<Typography sx={{color:"#303030", fontSize:'20px', marginLeft: '15px'}}>Quiz</Typography>
+<Typography sx={{color:"#303030", fontSize:'20px', marginLeft: '15px',}}>Quiz</Typography>
 </Grid>
     </Grid>
     </Container>

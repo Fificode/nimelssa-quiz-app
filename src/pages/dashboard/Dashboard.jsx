@@ -18,72 +18,79 @@ import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import Avatar from '@mui/material/Avatar';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+// import ListItemButton from '@mui/material/ListItemButton';
+// import ListItemIcon from '@mui/material/ListItemIcon';
+// import ListItemText from '@mui/material/ListItemText';
+// import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
+
+const drawerWidth = 230;
+
+const AppBar = styled(MuiAppBar, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  zIndex: theme.zIndex.drawer + 1,
+  transition: theme.transitions.create(['width', 'margin'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
+}));
+
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+  ({ theme, open }) => ({
+    '& .MuiDrawer-paper': {
+      position: 'relative',
+      whiteSpace: 'nowrap',
+      width: drawerWidth,
+      transition: theme.transitions.create('width', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      boxSizing: 'border-box',
+      ...(!open && {
+        overflowX: 'hidden',
+        transition: theme.transitions.create('width', {
+          easing: theme.transitions.easing.sharp,
+          duration: theme.transitions.duration.leavingScreen,
+        }),
+        width: theme.spacing(7),
+        [theme.breakpoints.up('sm')]: {
+          width: theme.spacing(9),
+        },
+      }),
+    },
+  }),
+);
+
+
+// TODO remove, this demo shouldn't need to reset the theme.
+const defaultTheme = createTheme();
 
 
 export default function Dashboard({toggleDrawer, open}) {
  
-  const drawerWidth = 240;
 
-  const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-  })(({ theme, open }) => ({
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    ...(open && {
-      marginLeft: drawerWidth,
-      width: `calc(100% - ${drawerWidth}px)`,
-      transition: theme.transitions.create(['width', 'margin'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-    }),
-  }));
-  
-  const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
-      '& .MuiDrawer-paper': {
-        position: 'relative',
-        whiteSpace: 'nowrap',
-        width: drawerWidth,
-        transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-        boxSizing: 'border-box',
-        ...(!open && {
-          overflowX: 'hidden',
-          transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-          }),
-          width: theme.spacing(7),
-          [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9),
-          },
-        }),
-      },
-    }),
-  );
-  
-  
-  // TODO remove, this demo shouldn't need to reset the theme.
-  const defaultTheme = createTheme();
-  
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex', height:'100vh' }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open} sx={{backgroundColor: '#ffffff', boxShadow: 0,}}>
+        <AppBar position="absolute" open={open} sx={{backgroundColor: '#ffffff', boxShadow: 0,  position:'fixed'}}>
         
           <Toolbar
             sx={{
               pr: '24px', 
+              maxWidth: '100%',
+             
             }}
           >
           
@@ -103,7 +110,7 @@ export default function Dashboard({toggleDrawer, open}) {
             </IconButton>
 
             <TextField
-            sx={{marginRight:'30px'}}
+            sx={{marginRight:'30px', }}
             color='secondary'
             size='small'
       variant="outlined"
@@ -132,7 +139,7 @@ export default function Dashboard({toggleDrawer, open}) {
 </Box>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent"  open={open} sx={{minHeight: '100vh', position:'fixed'}}>
           <Toolbar
             sx={{
               display: 'flex',
@@ -153,10 +160,21 @@ export default function Dashboard({toggleDrawer, open}) {
               <ChevronLeftIcon />
             </IconButton>
           </Toolbar>
-          <Divider />
-          <List component="nav" sx={{height: '100vh'}}>
+          <Divider/>
+          <List component="nav"  >
             {mainListItems}
-           <Box>{secondaryListItems}</Box> 
+            <Box>{secondaryListItems}</Box>
+           {/* <Box sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', height: '80vh' }}>
+        
+         <Box sx={{ mt: 'auto' }}>
+         <ListItemButton>
+      <ListItemIcon>
+      <LogoutIcon />
+      </ListItemIcon>
+      <ListItemText primary="Log out" />
+    </ListItemButton>
+         </Box>
+           </Box>  */}
           </List>
         </Drawer>
     

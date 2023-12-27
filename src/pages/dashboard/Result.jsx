@@ -16,8 +16,6 @@ const Result = ({open}) => {
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
             flexGrow: 1,
-            height: '100vh',
-            width: open ? '82%': '92%',
             overflow: 'auto',
             position: 'absolute',
             left: open ? '230px' : '70px',

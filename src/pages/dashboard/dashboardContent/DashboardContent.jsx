@@ -23,10 +23,13 @@ const DashboardContent = ({open}) => {
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
             flexGrow: 1,
-            height: '100vh',
+           
+            paddingLeft: '20px',
+            maxWidth: '100%',
+          
             overflow: 'auto',
             position: 'absolute',
-            left: open ? '230px' : '70px',
+            left: open ? '230px' : '55px',
             top: '0px' 
                      }}
         >
@@ -34,7 +37,7 @@ const DashboardContent = ({open}) => {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <Grid container spacing={3}>
             <Grid item xs='auto' md={12}>
-  <Box sx={{width: '100%', height: '150px', backgroundColor: '#cd9cf2', borderRadius: '10px', display: 'flex', flexDirection:'row', justifyContent: 'space-between'}}>
+  <Box sx={{width: '100%', height: '150px', backgroundColor: '#cd9cf2', borderRadius: '10px', display: 'flex', flexDirection:'row', justifyContent: 'space-between',}}>
   <Box sx={{flexGrow: 1,  padding: '30px', display: 'flex', flexDirection: 'column'}}>
   <Typography sx={{color: '#303030', fontSize: '30px'}}>Hi, Layla</Typography>
   <Typography sx={{color: '#303030'}}>Ready to start your day with some quiz?</Typography>
