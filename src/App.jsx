@@ -6,7 +6,7 @@ import Logo from './pages/Logo';
 import Login from './pages/Login';
 import Dashboard from './pages/dashboard/Dashboard';
 import Quiz from './pages/dashboard/Quiz';
-import DashboardContent from './pages/dashboard/DashboardContent';
+import DashboardContent from './pages/dashboard/dashboardContent/DashboardContent';
 import Result from './pages/dashboard/Result';
 import Settings from './pages/dashboard/Settings';
 
@@ -14,7 +14,10 @@ import Settings from './pages/dashboard/Settings';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  
+  const [open, setOpen] = React.useState(true);
+  const toggleDrawer = () => {
+    setOpen(!open);
+  };
 
   useEffect(() => {
   const timeout = setTimeout(() => {
@@ -39,11 +42,11 @@ return () => clearTimeout(timeout);
            <Route path="/signup" exact element={<Signup/>} />
            <Route path="/login" exact element={<Login/>} />
            </Route>
-          <Route path='/dashboard' element={<LayoutsWithDashboard/>} >
-          <Route path="/dashboard" exact element={<DashboardContent />}/>
-          <Route path="/dashboard/quiz" element={<Quiz />}/>
-          <Route path="/dashboard/result" element={<Result />}/>
-          <Route path="/dashboard/settings" element={<Settings/>}/>
+          <Route path='/dashboard' element={<LayoutsWithDashboard toggleDrawer={toggleDrawer} open={open}/>} >
+          <Route path="/dashboard" exact element={<DashboardContent open={open}/>}/>
+          <Route path="/dashboard/quiz" element={<Quiz  open={open} />}/>
+          <Route path="/dashboard/result" element={<Result open={open} />}/>
+          <Route path="/dashboard/settings" element={<Settings open={open}/>}/>
      </Route>
       
            </Routes>
@@ -61,10 +64,10 @@ function LayoutsWithLogo(){
   )
 }
 
-function LayoutsWithDashboard(){
+function LayoutsWithDashboard({toggleDrawer, open}){
   return (
     <>
-<Dashboard />
+<Dashboard  toggleDrawer={toggleDrawer} open={open}/>
 <Outlet />
 
     </>

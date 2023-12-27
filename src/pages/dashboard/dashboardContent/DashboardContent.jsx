@@ -11,7 +11,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 
-const DashboardContent = () => {
+const DashboardContent = ({open}) => {
+
   return (
     <>
          <Box
@@ -25,7 +26,7 @@ const DashboardContent = () => {
             height: '100vh',
             overflow: 'auto',
             position: 'absolute',
-            left: '230px',
+            left: open ? '230px' : '70px',
             top: '0px' 
                      }}
         >

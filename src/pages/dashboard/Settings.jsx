@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 
 
-const Settings = () => {
+const Settings = ({open}) => {
   return (
     <>
    <Box  component="main"
@@ -17,10 +17,10 @@ const Settings = () => {
                 : theme.palette.grey[900],
             flexGrow: 1,
             height: '100vh',
-            width: '82%',
+            width: open ? '82%': '92%',
             overflow: 'auto',
             position: 'absolute',
-            left: '230px',
+            left: open ? '230px' : '70px',
             top: '0px' 
                      }}>
                        <Toolbar />

@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 
-const Quiz = () => {
+const Quiz = ({open}) => {
   return (
     <>
    <Box  component="main"
@@ -16,10 +16,10 @@ const Quiz = () => {
                 : theme.palette.grey[900],
             flexGrow: 1,
             height: '100vh',
-            width: '82%',
+            width: open ? '82%': '92%',
             overflow: 'auto',
             position: 'absolute',
-            left: '230px',
+            left: open ? '230px' : '70px',
             top: '0px' 
                      }}>
                        <Toolbar />

@@ -23,63 +23,58 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 
 
-const drawerWidth = 240;
+export default function Dashboard({toggleDrawer, open}) {
+ 
+  const drawerWidth = 240;
 
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(['width', 'margin'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
+  const AppBar = styled(MuiAppBar, {
+    shouldForwardProp: (prop) => prop !== 'open',
+  })(({ theme, open }) => ({
+    zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
+      duration: theme.transitions.duration.leavingScreen,
     }),
-  }),
-}));
-
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    '& .MuiDrawer-paper': {
-      position: 'relative',
-      whiteSpace: 'nowrap',
-      width: drawerWidth,
-      transition: theme.transitions.create('width', {
+    ...(open && {
+      marginLeft: drawerWidth,
+      width: `calc(100% - ${drawerWidth}px)`,
+      transition: theme.transitions.create(['width', 'margin'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
       }),
-      boxSizing: 'border-box',
-      ...(!open && {
-        overflowX: 'hidden',
+    }),
+  }));
+  
+  const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+    ({ theme, open }) => ({
+      '& .MuiDrawer-paper': {
+        position: 'relative',
+        whiteSpace: 'nowrap',
+        width: drawerWidth,
         transition: theme.transitions.create('width', {
           easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
+          duration: theme.transitions.duration.enteringScreen,
         }),
-        width: theme.spacing(7),
-        [theme.breakpoints.up('sm')]: {
-          width: theme.spacing(9),
-        },
-      }),
-    },
-  }),
-);
-
-
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
-
-
-export default function Dashboard() {
-  const [open, setOpen] = React.useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
-
+        boxSizing: 'border-box',
+        ...(!open && {
+          overflowX: 'hidden',
+          transition: theme.transitions.create('width', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+          }),
+          width: theme.spacing(7),
+          [theme.breakpoints.up('sm')]: {
+            width: theme.spacing(9),
+          },
+        }),
+      },
+    }),
+  );
+  
+  
+  // TODO remove, this demo shouldn't need to reset the theme.
+  const defaultTheme = createTheme();
+  
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex', height:'100vh' }}>
