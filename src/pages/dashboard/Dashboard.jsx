@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -13,15 +14,20 @@ import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import QuizIcon from '@mui/icons-material/Quiz';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import LogoutIcon from '@mui/icons-material/Logout';
+import SettingsIcon from '@mui/icons-material/Settings';
+import { NavLink, useLocation } from 'react-router-dom';
+import { makeStyles } from 'tss-react/mui';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import Avatar from '@mui/material/Avatar';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-// import ListItemButton from '@mui/material/ListItemButton';
-// import ListItemIcon from '@mui/material/ListItemIcon';
-// import ListItemText from '@mui/material/ListItemText';
-// import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
@@ -71,15 +77,30 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     },
   }),
 );
-
+const useStyles = makeStyles()(() => {
+  return {
+    activeLink: {
+      backgroundColor: '#cd9cf2',
+    },
+  };
+});
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 
 export default function Dashboard({toggleDrawer, open}) {
- 
-
+  const {classes} = useStyles();
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState('');
+  
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
+  
+  const isActive = (path) => {
+    return path === activeLink ? 'activeLink' : '';
+  };
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex', height:'100vh' }}>
@@ -162,8 +183,47 @@ export default function Dashboard({toggleDrawer, open}) {
           </Toolbar>
           <Divider/>
           <List component="nav"  >
-            {mainListItems}
-            <Box>{secondaryListItems}</Box>
+          <NavLink to='/dashboard'  >
+    <ListItemButton className={isActive('/dashboard') ? classes.activeLink : null}>
+      <ListItemIcon>
+        <DashboardIcon />
+      </ListItemIcon>
+      <ListItemText primary="Overview" />
+    </ListItemButton>
+</NavLink>
+<NavLink to='/dashboard/quiz'  >
+    <ListItemButton className={isActive('/dashboard/quiz') ? classes.activeLink : null}>
+      <ListItemIcon>
+      <QuizIcon />
+      </ListItemIcon>
+      <ListItemText primary="Quiz" />
+    </ListItemButton>
+</NavLink>
+<NavLink to='/dashboard/result'>
+    <ListItemButton className={isActive('/dashboard/result') ? classes.activeLink : null}>
+      <ListItemIcon>
+      <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Result" />
+    </ListItemButton>
+</NavLink>
+<NavLink to='/dashboard/settings'>
+    <ListItemButton className={isActive('/dashboard/settings') ? classes.activeLink : null}>
+      <ListItemIcon>
+        <SettingsIcon />
+      </ListItemIcon>
+      <ListItemText primary="Settings" />
+    </ListItemButton>
+    </NavLink>
+    <NavLink >
+    <ListItemButton>
+      <ListItemIcon>
+      <LogoutIcon />
+      </ListItemIcon>
+      <ListItemText primary="Log out" />
+    </ListItemButton>
+    </NavLink>
+            {/* <Box>{secondaryListItems}</Box> */}
            {/* <Box sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', height: '80vh' }}>
         
          <Box sx={{ mt: 'auto' }}>
