@@ -50,13 +50,14 @@ const DashboardContent = ({open}) => {
           {/* Overview */}
           <Grid item xs={12}>
 <Typography sx={{color:"#303030", fontSize:'20px', marginLeft: '15px'}}>Overview</Typography>
-<Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center',flexWrap: 'wrap', '@media (min-width:600px)': {
-          flexDirection: 'row', justifyContent:'space-around',
-        },}}>
+<Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', flexWrap: 'wrap', '@media (min-width:600px)': {
+          flexDirection: 'row', 
+        }, }}>
 <Box>
 <Paper
                   sx={{
                     my: 2,
+                    mx: 2,
                     p: 2,
                     display: 'flex',
                     flexDirection: 'row',
@@ -81,6 +82,7 @@ const DashboardContent = ({open}) => {
   <Paper
                   sx={{
                     my: 2,
+                    mx: 2,
                     p: 2,
                     display: 'flex',
                     flexDirection: 'row',
@@ -105,6 +107,7 @@ const DashboardContent = ({open}) => {
   <Paper
                   sx={{
                     my: 2,
+                    mx: 2,
                     p: 2,
                     display: 'flex',
                     flexDirection: 'row',

@@ -6,6 +6,11 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from '../Title';
+import { TableContainer } from '@mui/material';
+
+
+
+
 
 // Generate Order Data
 function createData(id, serialNumber, name, level, score) {
@@ -42,6 +47,34 @@ const rows = [
    200,
     75,
   ),
+  createData(
+    5,
+   6,
+    'Bruce Springsteen',
+   200,
+    75,
+  ),
+  createData(
+    6,
+   7,
+    'Bruce Springsteen',
+   200,
+    75,
+  ),
+  createData(
+    7,
+   8,
+    'Bruce Springsteen',
+   200,
+    75,
+  ),
+  createData(
+    8,
+   9,
+    'Bruce Springsteen',
+   200,
+    75,
+  ),
 ];
 
 function preventDefault(event) {
@@ -49,9 +82,12 @@ function preventDefault(event) {
 }
 
 export default function QuizList() {
+  
   return (
     <React.Fragment>
       <Title>Leader board</Title>
+      <TableContainer style={{ maxHeight: 300,
+      overflow: 'auto', }}>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -72,6 +108,7 @@ export default function QuizList() {
           ))}
         </TableBody>
       </Table>
+      </TableContainer>
       <Link href="#" onClick={preventDefault} sx={{ mt: 3, color: 'purple', textDecoration: 'none' }}>
         See more participants
       </Link>

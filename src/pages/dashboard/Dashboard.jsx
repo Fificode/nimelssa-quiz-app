@@ -94,10 +94,12 @@ export default function Dashboard({toggleDrawer, open}) {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState('');
   
+  // Get location path for dashboard link
   useEffect(() => {
     setActiveLink(location.pathname);
   }, [location]);
   
+  // Dashboard link active
   const isActive = (path) => {
     return path === activeLink ? 'activeLink' : '';
   };
