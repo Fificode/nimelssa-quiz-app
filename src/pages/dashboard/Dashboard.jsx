@@ -184,6 +184,7 @@ export default function Dashboard({toggleDrawer, open}) {
             </IconButton>
           </Toolbar>
           <Divider/>
+          <Box sx={{height: '100vh'}}>
           <List component="nav"  >
           <NavLink to='/dashboard'  >
     <ListItemButton className={isActive('/dashboard') ? classes.activeLink : null}>
@@ -225,7 +226,6 @@ export default function Dashboard({toggleDrawer, open}) {
       <ListItemText primary="Log out" />
     </ListItemButton>
     </NavLink>
-            {/* <Box>{secondaryListItems}</Box> */}
            {/* <Box sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', height: '80vh' }}>
         
          <Box sx={{ mt: 'auto' }}>
@@ -238,6 +238,7 @@ export default function Dashboard({toggleDrawer, open}) {
          </Box>
            </Box>  */}
           </List>
+          </Box>
         </Drawer>
     
              </Box>

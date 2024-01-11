@@ -31,7 +31,7 @@ return () => clearTimeout(timeout);
     {/* Nimelssa Quiz Time on Load */}
       {loading ? (
         <div className='flex justify-center items-center min-h-screen bg-gradient-to-t from-white-bg to-light-purple-bg animate-breathe'>
-       <img src='./assets/nimelssaQuizTime.png' alt='Illustration of Quiz Time on Screen' className='w-[250px] h-[350px] md:w-[300px] md:h-[400px]' />
+       <img src='./assets/nimelssaQuizTime.png' alt='Illustration of Quiz Time on Screen' className='w-[250px] h-[350px] mb-[20px] md:w-[300px] md:h-[400px]' />
        </div>
       ) : (
        <Router>
