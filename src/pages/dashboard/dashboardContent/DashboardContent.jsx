@@ -23,10 +23,8 @@ const DashboardContent = ({open}) => {
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
             flexGrow: 1,
-           
             paddingLeft: '20px',
             maxWidth: '100%',
-          
             overflow: 'auto',
             position: 'absolute',
             left: open ? '230px' : '55px',
@@ -44,7 +42,7 @@ const DashboardContent = ({open}) => {
   </Box>
   
            
-  <img src="/assets/isometric.png" alt="NIMELSSA Logo" style={{width: '400px', height: '180px'}} />
+  <img src="/assets/isometric.png" alt="Overview background showing a desk with laptop, books and writing materials" style={{width: '400px', height: '180px'}} />
   </Box>
  </Grid>
           {/* Overview */}

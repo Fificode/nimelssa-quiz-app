@@ -10,22 +10,26 @@ const Quiz = ({open}) => {
     <>
    <Box  component="main"
     sx={{
-            backgroundColor: (theme) =>
+      backgroundColor: (theme) =>
               theme.palette.mode === 'light'
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
             flexGrow: 1,
+            paddingLeft: '20px',
+            maxWidth: '100%',
             overflow: 'auto',
             position: 'absolute',
-            left: open ? '230px' : '70px',
+            left: open ? '230px' : '55px',
             top: '0px' 
                      }}>
                        <Toolbar />
                        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                        <Grid container spacing={3}>
 
- <Grid item xs={12}>
-<Typography sx={{color:"#303030", fontSize:'20px', marginLeft: '15px',}}>Quiz</Typography>
+ <Grid item  md={12}>
+ <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+   <Box sx={{ }}><Typography sx={{color:"#303030", fontSize:'30px', textAlign:'center'}}>Start Quiz</Typography> </Box> 
+</Box>
 </Grid>
     </Grid>
     </Container>
