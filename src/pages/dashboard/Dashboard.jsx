@@ -105,9 +105,10 @@ export default function Dashboard({toggleDrawer, open}) {
   };
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Box sx={{ display: 'flex', height:'100vh',   }}>
+      
+    
         <CssBaseline />
-        <AppBar position="absolute" open={open} sx={{backgroundColor: '#ffffff', boxShadow: 0,  position:'fixed',}}>
+        <AppBar position="fixed" open={open} sx={{backgroundColor: '#ffffff', boxShadow: 0, }}>
         
           <Toolbar
             sx={{
@@ -240,8 +241,7 @@ export default function Dashboard({toggleDrawer, open}) {
           </List>
           </Box>
         </Drawer>
-    
-             </Box>
+          
     </ThemeProvider>
   );
 }

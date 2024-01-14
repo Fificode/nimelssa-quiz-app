@@ -1,34 +1,41 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
 const Quiz = ({open}) => {
   return (
     <>
    <Box  component="main"
     sx={{
+      // backgroundImage: "url('/assets/quiz-bg-one.jpg')",
+      // backgroundSize: 'cover',
+      // backgroundRepeat: 'no-repeat',
       backgroundColor: (theme) =>
               theme.palette.mode === 'light'
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
+      minHeight:'100vh',
             flexGrow: 1,
-            paddingLeft: '20px',
             maxWidth: '100%',
             overflow: 'auto',
-            position: 'absolute',
-            left: open ? '230px' : '55px',
-            top: '0px' 
+            paddingLeft: open ? '230px' : '70px',
                      }}>
-                       <Toolbar />
+                      
                        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                        <Grid container spacing={3}>
 
- <Grid item  md={12}>
- <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-   <Box sx={{ }}><Typography sx={{color:"#303030", fontSize:'30px', textAlign:'center'}}>Start Quiz</Typography> </Box> 
+ <Grid item  xs={12}>
+ <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px'}}>
+   <Box><Typography sx={{color:"#303030", fontSize:'30px', textAlign:'center', paddingBottom:'15px', fontWeight: 600,}}>Ready to start quiz ?</Typography>
+  <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src="/assets/start-quiz-bg.jpg" alt="Quiz background showing kids playing around a Quiz text" style={{width: '250px', height: 'auto', borderRadius: '10px'}} /></Box> 
+   <Box sx={{display: 'flex', justifyContent: 'center', alignItems:'center', marginTop: '40px'}}>
+   <Button sx={{backgroundColor: 'purple', color: '#fff', padding: '10px 20px', textTransform: 'none', fontSize: '15px',  '&:hover': {
+          backgroundColor: '#cd9cf2', 
+        },}}>Start Quiz</Button>
+   </Box>
+    </Box> 
 </Box>
 </Grid>
     </Grid>

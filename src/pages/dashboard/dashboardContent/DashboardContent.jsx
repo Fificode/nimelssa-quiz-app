@@ -23,12 +23,10 @@ const DashboardContent = ({open}) => {
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
             flexGrow: 1,
-            paddingLeft: '20px',
-            maxWidth: '100%',
+           maxWidth: '100%',
             overflow: 'auto',
-            position: 'absolute',
-            left: open ? '230px' : '55px',
-            top: '0px' 
+            paddingLeft: open ? '230px' : '70px',
+          
                      }}
         >
           <Toolbar />
