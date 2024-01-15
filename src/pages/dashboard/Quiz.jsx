@@ -1,17 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Button, Typography } from '@mui/material';
 
-const Quiz = ({open}) => {
+const Quiz = ({open, startCountdown, countdown}) => {
+ 
   return (
     <>
    <Box  component="main"
     sx={{
-      // backgroundImage: "url('/assets/quiz-bg-one.jpg')",
-      // backgroundSize: 'cover',
-      // backgroundRepeat: 'no-repeat',
       backgroundColor: (theme) =>
               theme.palette.mode === 'light'
                 ? theme.palette.grey[100]
@@ -28,12 +27,12 @@ const Quiz = ({open}) => {
 
  <Grid item  xs={12}>
  <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px'}}>
-   <Box><Typography sx={{color:"#303030", fontSize:'30px', textAlign:'center', paddingBottom:'15px', fontWeight: 600,}}>Ready to start quiz ?</Typography>
+   <Box><Typography sx={{color:"#303030", fontSize:'30px', textAlign:'center', paddingBottom:'15px', fontWeight: 600,}}>Ready for some quiz ?</Typography>
   <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src="/assets/start-quiz-bg.jpg" alt="Quiz background showing kids playing around a Quiz text" style={{width: '250px', height: 'auto', borderRadius: '10px'}} /></Box> 
    <Box sx={{display: 'flex', justifyContent: 'center', alignItems:'center', marginTop: '40px'}}>
    <Button sx={{backgroundColor: 'purple', color: '#fff', padding: '10px 20px', textTransform: 'none', fontSize: '15px',  '&:hover': {
           backgroundColor: '#cd9cf2', 
-        },}}>Start Quiz</Button>
+        },}}><Link to='/dashboard/quiz/startquiz' target="_blank" rel="noopener noreferrer">Get Started</Link></Button>
    </Box>
     </Box> 
 </Box>
