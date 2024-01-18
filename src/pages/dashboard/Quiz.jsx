@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Button, Typography } from '@mui/material';
 
-const Quiz = ({open, startCountdown, countdown}) => {
+const Quiz = ({open}) => {
  
   return (
     <>

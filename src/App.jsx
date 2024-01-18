@@ -6,11 +6,12 @@ import Logo from './pages/Logo';
 import Login from './pages/Login';
 import Dashboard from './pages/dashboard/Dashboard';
 import Quiz from './pages/dashboard/Quiz';
-import DashboardContent from './pages/dashboard/dashboardContent/DashboardContent';
+import DashboardContent from './pages/dashboard/DashboardContent';
 import Result from './pages/dashboard/Result';
 import Settings from './pages/dashboard/Settings';
-import QuizCountdown from './pages/dashboard/quizPage/QuizCountdown';
-import StartQuiz from './pages/dashboard/quizPage/StartQuiz';
+import QuizCountdown from './pages/dashboard/QuizPage/QuizCountdown';
+import StartQuiz from './pages/dashboard/QuizPage/StartQuiz';
+import LeaderBoard from './pages/dashboard/LeaderBoard';
 
 
 function App() {
@@ -73,6 +74,7 @@ return () => clearTimeout(timeout);
           <Route path="/dashboard" exact element={<DashboardContent open={open}/>}/>
           <Route path="/dashboard/quiz" element={<Quiz  open={open} countdown={countdown} startCountdown={startCountdown} />}/>
           <Route path="/dashboard/result" element={<Result open={open} />}/>
+          <Route path='/dashboard/leaderboard' element={<LeaderBoard open={open}/>} />
           <Route path="/dashboard/settings" element={<Settings open={open}/>}/>
           </Route>
           <Route path='/dashboard/quiz/startquiz' element={<StartQuiz startCountdown={startCountdown} countdown={countdown} />} />

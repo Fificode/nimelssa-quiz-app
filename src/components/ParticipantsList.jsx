@@ -5,7 +5,7 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Title from '../Title';
+import Title from './Title';
 import { TableContainer } from '@mui/material';
 
 
@@ -81,7 +81,7 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function QuizList() {
+export default function ParticipantsListList() {
   
   return (
     <React.Fragment>

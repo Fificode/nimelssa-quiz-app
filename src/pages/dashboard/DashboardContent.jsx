@@ -1,14 +1,12 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import Chart from './Chart';
-import Deposits from './Deposits';
-import QuizList from './QuizList';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Reminder from '../../components/Reminder';
 
 
 const DashboardContent = ({open}) => {
@@ -40,7 +38,7 @@ const DashboardContent = ({open}) => {
   </Box>
   
            
-  <img src="/assets/isometric.png" alt="Overview background showing a desk with laptop, books and writing materials" style={{width: '400px', height: '180px'}} />
+  <img src="/assets/isometric.png" alt="Overview background showing a desk with laptop, books and writing materials" style={{width: '400px', height: '180px', }} />
   </Box>
  </Grid>
           {/* Overview */}
@@ -129,7 +127,7 @@ const DashboardContent = ({open}) => {
 
           </Grid>
               {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
+              {/* <Grid item xs={12} md={8} lg={9}>
                 <Paper
                   sx={{
                     p: 2,
@@ -140,8 +138,8 @@ const DashboardContent = ({open}) => {
                 >
                   <Chart />
                 </Paper>
-              </Grid>
-              {/* Recent Deposits */}
+              </Grid> */}
+              {/* Reminder */}
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
@@ -151,15 +149,10 @@ const DashboardContent = ({open}) => {
                     height: 240,
                   }}
                 >
-                  <Deposits />
+                  <Reminder />
                 </Paper>
               </Grid>
-              {/* Recent Quiz Participant */}
-              <Grid item xs='auto' md={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <QuizList />
-                </Paper>
-              </Grid>
+             
             </Grid>
           </Container>
         </Box>

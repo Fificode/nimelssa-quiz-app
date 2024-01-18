@@ -211,6 +211,14 @@ export default function Dashboard({toggleDrawer, open}) {
       <ListItemText primary="Result" />
     </ListItemButton>
 </NavLink>
+<NavLink to='/dashboard/leaderboard'>
+    <ListItemButton className={isActive('/dashboard/leaderboard') ? classes.activeLink : null}>
+      <ListItemIcon>
+      <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Leader Board" />
+    </ListItemButton>
+</NavLink>
 <NavLink to='/dashboard/settings'>
     <ListItemButton className={isActive('/dashboard/settings') ? classes.activeLink : null}>
       <ListItemIcon>
